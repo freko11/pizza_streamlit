@@ -17,7 +17,7 @@ hide_st_style = """
 
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
-@st.cache_data
+@st.experimental_memo
 def get_data():
     df = pd.read_excel("Data Model - Pizza Sales.xlsx")
     df['hour'] = pd.to_datetime(df['order_time'], format='%H:%M:%S').dt.hour
